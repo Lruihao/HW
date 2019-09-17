@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>NBA球員信息採集表</title>
+  </head>
+  <body>
+    <form id="user-form" action="./" method="POST" style="margin: 0 auto;width: 50%;">
+      <fieldset>
+        <legend align="center">NBA球員信息採集表</legend>
+
+        <fieldset>
+          <legend>基本資料</legend>
+          <table>
+            <tr>
+              <th>姓名：</th>
+              <td>
+                <input type="text" placeholder="如：Kyrie Irving" autofocus maxlength="50" required/>&ensp;*
+              </td>
+            </tr>
+            <tr>
+              <th>國籍：</th>
+              <td>
+                <input type="text" list="country" name="country" placeholder="如：美國" required/>&ensp;*
+                <datalist id="country">
+                  <option value="CHINA">中國</option>
+                  <option value="USA">美國</option>
+                  <option value="UK">英國</option>
+                  <option value="Australia">澳大利亞</option>
+                  <option value="Russia">俄羅斯</option>
+                </datalist>
+              </td>
+            </tr>
+            <tr>
+              <th>郵箱：</th>
+              <td>
+                <input type="email" placeholder="yourname@example.com"/>
+              </td>
+            </tr>
+            <tr>
+              <th>推特：</th>
+              <td>
+                <input type="url" placeholder="http://example.com"/>
+              </td>
+            </tr>
+            <tr>
+              <th>性別：</th>
+              <td>
+                <label for="single-a">
+                  <input id="single-a" type="radio" name="single" value="male" checked />
+                  男
+                </label>
+                <label for="single-b">
+                  <input id="single-b" type="radio" name="single" value="female" />
+                  女
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <th>照片：</th>
+              <td>
+                <input type="file" />
+              </td>
+            </tr>
+            <tr>
+              <th>生日：</th>
+              <td>
+                <input type="date" min="1980-01-01" max="2002-01-01"/> 
+                <i>（1980-01-01~2002-01-01）</i>
+              </td>
+            </tr>
+            <tr>
+              <th>身高：</th>
+              <td>
+                <input type="number" min="170" max="250" step="1" placeholder="170~250cm"/>
+                <b>幸運色：</b><input type="color"/>
+              </td>
+            </tr>
+            <tr> 
+              <th>搜索框：</th>
+              <td>
+                <input type="search" placeholder="搜索更多"/>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+
+        <fieldset>
+          <legend>聯盟資料</legend>
+          <table>
+            <tr>
+              <th>球風：</th>
+              <td>
+                傳統穩健<input type="range" min="1" max="10" value="9"/>華麗飄逸
+              </td>
+            </tr>
+            <tr>
+              <th>加入聯盟：</th>
+              <td>
+                <input type="datetime-local" required/>&ensp;*
+              </td>
+            </tr>
+            <tr>
+              <th>當前球隊：</th>
+              <td>
+                <input type="text" placeholder="如：騎士隊" />
+                <b>球衣號碼：</b>
+                <input type="number" min="0" max="99"/>
+                <b>主要位置：</b>
+                <select name="user-list" form="user-form">
+                  <option value="控衛">控衛</option>
+                  <option value="分衛">分衛</option>
+                  <option value="小前">小前</option>
+                  <option value="大前">大前</option>
+                  <option value="中鋒">中鋒</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <th>簽過球隊：</th>
+              <td>
+                <label for="multi-a">
+                  <input id="multi-a" type="checkbox" name="multi" value="a" />
+                  騎士
+                </label>
+                <label for="multi-b">
+                  <input id="multi-b" type="checkbox" name="multi" value="b" />
+                  凱爾特
+                </label>
+                <label for="multi-c">
+                  <input id="multi-c" type="checkbox" name="multi" value="c" checked />
+                  老鷹
+                </label>
+                <label for="multi-d">
+                  <input id="multi-d" type="checkbox" name="multi" value="d" />
+                  湖人
+                </label>
+                <label for="multi-e">
+                  <input id="multi-e" type="checkbox" name="multi" value="e"  />
+                  火箭
+                </label>
+                <label for="multi-f">
+                  <input id="multi-f" type="checkbox" name="multi" value="f"  />
+                  熱火
+                </label>
+                <br />
+                <label for="multi-g">
+                  <input id="multi-g" type="checkbox" name="multi" value="g"  />
+                  雄鹿
+                </label>
+                <label for="multi-h">
+                  <input id="multi-h" type="checkbox" name="multi" value="h"  />
+                  開拓者
+                </label>
+                <label for="multi-i">
+                  <input id="multi-i" type="checkbox" name="multi" value="i"  />
+                  魔術
+                </label>
+                <label for="multi-j">
+                  <input id="multi-j" type="checkbox" name="multi" value="j"  />
+                  馬刺
+                </label>
+                <label for="multi-k">
+                  <input id="multi-k" type="checkbox" name="multi" value="k"  />
+                  勇士
+                </label>
+                <label for="multi-l">
+                  <input id="multi-l" type="checkbox" name="multi" value="l"  />
+                  其他
+                </label>
+              </td>
+            </tr>
+            <tr>
+              <th>詳細介紹：</th>
+              <td>
+                <textarea name="content" rows="5" cols="50"></textarea>
+              </td>
+            </tr>
+          </table>
+        </fieldset>
+
+        <fieldset>
+          <legend>提交信息</legend>
+          <table>
+            <tr>
+              <th>隱藏字段：</th>
+              <td>
+                <input type="hidden" value="你看不到"/>
+              </td>
+            </tr>
+            <tr>
+              <th>提交部門：</th>
+              <td>
+                <input type="text" value="NBA龍華管理處" readonly/>
+              </td>
+            </tr>
+            <tr>
+              <th>資料編號：</th>
+              <td>
+                <input type="text" value="系統自動生成" disabled/>
+              </td>
+            </tr>
+            <tr>
+              <th>資料密碼：</th>
+              <td>
+                <input type="password" minlength="6" placeholder="至少6位，查看資料時可用" required/>&ensp;*
+              </td>
+            </tr>
+            <tr>
+              <th>重複密碼：</th>
+              <td>
+                <input type="password" minlength="6" placeholder="重複輸入" required/>&ensp;*
+              </td>
+            </tr>
+            <tr>
+              <th>提交時間：</th>
+              <td>
+                <input type="time"/>
+              </td>
+            </tr>
+          </table>
+          <!--<keygen name="security" />-->
+          <button type="submit">送出表單</button>
+          <button type="reset">重設表單</button>
+        </fieldset>
+      </fieldset>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>問卷設計</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/HW_5-1.css" />
+    <script type="text/javascript" src="../js/HW_5-1.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>問卷管理 - 問卷設計</h1>
+    </header>
+    <main>
+      <div class="save box-showdow">
+        <button onclick="printDiv()">
+          <img src="../images/HW_5-1/save.png" alt="保存"/>
+          <span>完成問卷</span>
+        </button>
+      </div>
+      <hr/>
+      <div class="question-setting box-showdow">
+        <div>
+          <span>問題類型</span>
+          <select onchange="selectType()" class="question-type">
+            <option value="text">文本框（Text）</option>
+            <option value="password">密碼框（Password）</option>
+            <option value="number">數字框（Number)</option>
+            <option value="textarea">文字方塊（Textarea）</option>
+            <option value="radio">單選（Radio）</option>
+            <option value="checkbox">多選框（Checkbox）</option>
+          </select>
+        </div>
+        <div>
+          <label>
+            <span>题&emsp;&emsp;目</span>
+            <input class="question-title" type="text" placeholder="請輸入題目名稱" autofocus required/>
+          </label>
+        </div>
+        <div class="question-preview"> </div>
+        <div>
+          <label for="required-item">
+            <input type="checkbox" id="required-item" name="required-item">
+            <span>此题目為必填</span>
+          </label>
+          <button onclick="questionAdd()">
+            <img src="../images/HW_5-1/pen.png" alt="新增"/>
+            <span>新增問題</span>
+          </button>
+        </div>
+      </div>
+      <hr/>
+      <div class="question-list box-showdow"></div>
+    </main>
+  </body>
+</html>

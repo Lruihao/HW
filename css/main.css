@@ -1,0 +1,151 @@
+/**
+ * @Name: main.css
+ * @Description: 個人主頁
+ * @Author: 李瑞豪
+ * @Update: 2019-09-03 12:31
+ */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #333;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #444;
+  border-radius: 10px;
+}
+body{
+  background: #f7f8f9;
+}
+summary{
+  outline:none;
+}
+blockquote{
+  text-align: center;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+q{
+  font-size:small;
+  text-align: center;
+}
+address{
+  font-size: 12px;
+  position: relative;
+  top: 15%;
+}
+header{
+  width: 700px;
+  text-align: center;
+  margin: 15px auto;
+}
+footer{
+  font-size: 12px;
+  width: 700px;
+  text-align: center;
+  margin: 0 auto;
+}
+main{
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 20px auto;
+  width: 700px;
+  height: 770px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px #888;
+}
+aside{
+  background: #4a4a4c;
+  box-sizing: border-box;
+  height: 770px;
+  width: 300px;
+  border-radius: 5px;
+  color: #fff;
+  padding: 30px;
+  overflow: auto;
+  animation: close-aside 2.5s;
+}
+@keyframes close-aside{
+  from{
+    transform: rotateY(135deg);
+    transform-origin: left;
+  }
+  to{
+    transform: rotateY(0);
+    transform-origin: left;
+  }
+}
+#avatar{
+  width: 67px;
+  height: 67px;
+  float: right;
+  transition: all 1s;
+}
+#avatar:hover{
+  transform: rotate(360deg) scale(1.1);
+  border-radius: 50%;
+}
+aside a{
+  color: #fff;
+  text-decoration:none;
+}
+aside a:hover{
+  color: #000;
+  text-decoration:underline;
+}
+section{
+  background: #fff;
+  box-sizing: border-box;
+  height: 770px;
+  width: calc(100% - 300px);
+  border-radius: 5px;
+  padding: 30px;
+  overflow: auto;
+}
+section a{
+  color: #000;
+  text-decoration:none;
+}
+section a:hover{
+  color: #3b80f1;
+  text-decoration:underline;
+}
+details ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+details ul li{
+  font-size: 0.93em;
+  height: 80px;
+  width: 44%;
+  padding: 1%;
+  margin: 1%;
+  position: relative;
+  font-weight: bold;
+}
+@font-face{
+  font-family: lrh-sign;
+  src: url(../fonts/lrh-en.ttf)
+}
+#author{
+  position: absolute;
+  align-self: center;
+  right: 10%;
+  z-index: -2; 
+}
+#author p{
+  margin: 10px auto;
+  font-size: 18px;
+  font-family: lrh-sign;
+}
+#author p:last-child{
+  font-size: 45px;
+}

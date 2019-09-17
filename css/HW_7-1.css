@@ -1,0 +1,31 @@
+/**
+ * @Name: HW_7-1.css
+ * @Description: PHP動態創建乘法表
+ * @Author: 李瑞豪
+ * @Update: 2019-09-04 12:23
+ */
+
+table{
+  width: 100%;
+  border-spacing: 2px;
+  border:1px solid #000;
+}
+caption{
+  margin: 10px auto;
+  height: 30px;
+  line-height: 30px;
+}
+td{
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border:1px solid #000;
+}
+.red{
+  color: #fff;
+  background: #f00;
+}
+.transform-bg:hover{
+  color: inherit;
+  background: yellow;
+}

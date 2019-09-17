@@ -1,0 +1,53 @@
+/**
+ * @Name: HW_4-2.css
+ * @Description: 自定義動畫，滾動的小球
+ * @Author: 李瑞豪
+ * @Update: 2019-08-26 17:20
+ */
+
+.box{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.ball{
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: sticky;
+  bottom: 0;
+  animation: move 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  text-align: center;
+  line-height: 60px;
+}
+@keyframes move{
+  0%{
+    background: #FFE32C;
+    left: 0%;
+    transform: rotate(0) scale(1.2);
+  }
+  25%{
+    background: rgb(149, 199, 139);
+    transform: rotate(720deg);
+  }
+  50%{
+    background: rgb(80, 250, 80);
+    left: calc(100% - 62px);;
+    transform: rotate(1440deg) scale(1.2);
+  }
+  75%{
+    background: rgb(82, 172, 255);
+    transform: rotate(720deg);
+  }
+  100%{
+    background: rgb(143, 93, 180);
+    left: 0%;
+    transform: rotate(0) scale(1.2);
+  }
+}
