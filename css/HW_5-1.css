@@ -2,7 +2,7 @@
  * @Name: HW_5-1.css
  * @Description: 問卷設計
  * @Author: 李瑞豪
- * @Update: 2019-09-17 15:04
+ * @Update: 2019-09-18 11:04
  */
 
 *{
@@ -58,8 +58,13 @@ main{
   height: 60px;
   background-color: #ccc;
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+}
+.save p{
+  font-size: 0.7rem;
+  margin-left: 10px;
 }
 button > span{
   margin-left: 5px;

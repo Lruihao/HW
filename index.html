@@ -4,14 +4,21 @@
     <meta charset="UTF-8" />
     <title>個人主頁</title>
     <link rel="stylesheet" type="text/css" href="./css/main.css" >
+    <script type="text/javascript" src="./js/main.js"></script>
   </head>
   <body>
     <header>
-      <p>Welcome to !</p>
+      <div class="welcome-inner">
+        <span>Welcome to my home!</span>
+      </div>
+      <div class="welcome-inner">               
+        <span>Welcome to my home!</span>
+      </div>
+      <input type="text" placeholder="輸入播報內容..." class="welcome-input" />
     </header>
     <main>
-      <aside>
-        <img src="./images/avatar.png" id="avatar" alt="大頭照" />
+      <aside ondblclick="toggle()" class="close-aside">
+        <img src="./images/avatar.png" class="avatar" alt="大頭照" />
         <h2>個人簡介</h2>
         <hr />
         <p>姓名：  
@@ -69,8 +76,8 @@
           </ul>
         </details>
       </section>
-      <div id="author">
-        <p>Update: 2019-09-17</p>
+      <div class="author">
+        <p>Update: 2019-09-18</p>
         <p>Designed By: </p>
         <p>&emsp;李瑞豪</p>
       </div>

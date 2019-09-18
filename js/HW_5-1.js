@@ -2,11 +2,32 @@
  * @Name: HW_5-1.js
  * @Description: 問卷管理 - 問卷設計
  * @Author: 李瑞豪
- * @Update: 2019-09-17 15:04
+ * @Update: 2019-09-18 11:04
  */
 
 //全局變量，單選或多選的name屬性編號
 var nameNum = 0;
+
+//建立窗口鍵盤事件監聽
+window.addEventListener("keydown", function () {
+  shortcutKeys(event);
+});
+/**
+ * 全局快捷鍵設置函數：
+ * 回車/F8 新增問題、F7 打印問卷、Alt+x 清空選項
+ * @param {Object} event 鍵盤按下事件對象
+ */
+function shortcutKeys(event) {
+  if (event.keyCode === 13 || event.keyCode === 119) {
+    questionAdd();
+  } else if (event.keyCode === 118) {
+    printDiv();
+  } else if (event.altKey && event.keyCode === 88) {
+    document.querySelector(".question-type").value = "text";
+    document.querySelector("#required-item").checked = false;
+    clearLastInfo();
+  }
+}
 
 /**
  * 判斷問題類型，預覽不同問題
@@ -322,7 +343,8 @@ function deleteItem(div) {
  * 打印局部問卷
  */
 function printDiv() {
-  var headHtml = "<html><head><title></title></head><body>";
+  clearLastInfo();
+  var headHtml = "<html><head></head><body>";
   var footHtml = "</body>";
   // 获取問題列表中的html内容
   var newHtml = document.querySelector('.question-list').innerHTML;

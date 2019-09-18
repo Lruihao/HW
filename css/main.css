@@ -2,7 +2,7 @@
  * @Name: main.css
  * @Description: 個人主頁
  * @Author: 李瑞豪
- * @Update: 2019-09-03 12:31
+ * @Update: 2019-09-18 11:25
  */
 
 ::-webkit-scrollbar {
@@ -42,8 +42,56 @@ address{
 header{
   width: 700px;
   text-align: center;
-  margin: 15px auto;
+  margin: 20px auto 0;
+  display:flex;
+  justify-content: space-between;
 }
+.welcome-input{
+  width: 300px;
+  border: 2px inset #eee;
+  border-radius: 5px; 
+  outline: none;
+}
+header .welcome-inner{
+  height: 30px;
+  width: 200px;
+  line-height: 30px;
+  font-size: 1em;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  /*  border-top: 2px solid #ccc;*/
+}
+header .welcome-inner:first-child {
+  background-color: #8EC5FC;
+  background-image: linear-gradient(223deg, #8EC5FC 0%, #E0C3FC 100%);
+  color: #fff;
+  border-radius: 5px 0 0 0;
+}
+header .welcome-inner:nth-child(2) {
+  background-color: #8EC5FC;
+  background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  color: #000;
+  border-radius: 0 5px 0 0;
+}
+header .welcome-inner span{
+  position: absolute;
+  animation: marquee 6s linear infinite;
+}
+header .welcome-inner:first-child span{
+  animation-delay: 3s;
+  left: 100%;
+}
+@keyframes marquee {
+  from{
+    left: 100%;
+  }  
+  to {
+    left: -100%;
+  }
+}
+
 footer{
   font-size: 12px;
   width: 700px;
@@ -54,7 +102,7 @@ main{
   position: relative;
   display: flex;
   flex-direction: row-reverse;
-  margin: 20px auto;
+  margin: 0 auto 20px;
   width: 700px;
   height: 770px;
   border: 2px solid #ccc;
@@ -66,29 +114,41 @@ aside{
   box-sizing: border-box;
   height: 770px;
   width: 300px;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
   color: #fff;
   padding: 30px;
   overflow: auto;
   animation: close-aside 2.5s;
+  z-index: 1;
+}
+.open-aside{
+  transform-origin: left;
+  transform: skewY(5deg) rotateY(135deg);
+  transition: transform 2.5s;
+}
+.close-aside{
+  transform-origin: left;
+  transform: skewY(0deg) rotateY(0deg);
+  transition: transform 2.5s;
 }
 @keyframes close-aside{
   from{
-    transform: rotateY(135deg);
+    transform: skewY(5deg) rotateY(135deg);
     transform-origin: left;
   }
   to{
-    transform: rotateY(0);
+    transform: skewY(0deg) rotateY(0deg);
     transform-origin: left;
   }
 }
-#avatar{
+
+.avatar{
   width: 67px;
   height: 67px;
   float: right;
   transition: all 1s;
 }
-#avatar:hover{
+.avatar:hover{
   transform: rotate(360deg) scale(1.1);
   border-radius: 50%;
 }
@@ -105,7 +165,7 @@ section{
   box-sizing: border-box;
   height: 770px;
   width: calc(100% - 300px);
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
   padding: 30px;
   overflow: auto;
 }
@@ -135,17 +195,17 @@ details ul li{
   font-family: lrh-sign;
   src: url(../fonts/lrh-en.ttf)
 }
-#author{
+.author{
   position: absolute;
   align-self: center;
   right: 10%;
   z-index: -2; 
 }
-#author p{
+.author p{
   margin: 10px auto;
   font-size: 18px;
   font-family: lrh-sign;
 }
-#author p:last-child{
+.author p:last-child{
   font-size: 45px;
 }
