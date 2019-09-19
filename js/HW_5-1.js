@@ -12,6 +12,7 @@ var nameNum = 0;
 window.addEventListener("keydown", function () {
   shortcutKeys(event);
 });
+
 /**
  * 全局快捷鍵設置函數：
  * 回車/F8 新增問題、F7 打印問卷、Alt+x 清空選項

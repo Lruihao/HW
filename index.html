@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <title>個人主頁</title>
     <link rel="stylesheet" type="text/css" href="./css/main.css" >
+    <link rel="icon" href="https://10.151.110.165/favicon.ico" >
     <script type="text/javascript" src="./js/main.js"></script>
   </head>
   <body>
     <header>
       <div class="welcome-inner">
-        <span>Welcome to my home!</span>
+        <span>歡迎光臨！點擊頭像可翻開底頁！✄</span>
       </div>
-      <div class="welcome-inner">               
-        <span>Welcome to my home!</span>
+      <div class="welcome-inner">
+        <span>歡迎光臨！點擊頭像可翻開底頁！✄</span>
       </div>
-      <input type="text" placeholder="輸入播報內容..." class="welcome-input" />
     </header>
     <main>
-      <aside ondblclick="toggle()" class="close-aside">
+      <aside class="close-aside">
         <img src="./images/avatar.png" class="avatar" alt="大頭照" />
         <h2>個人簡介</h2>
         <hr />
@@ -53,7 +53,7 @@
         <h2>作業目錄</h2>
         <hr/>
         <details open="open">
-          <summary><b>作業進度：</b><progress value="6" max="10" title="60%"></progress></summary>
+          <summary><b>作業進度：</b><progress max="10"></progress></summary>
           <ul>
             <li>
               <a href="./HW_2-1/index.html" target="_blank">2019/08/08<br/>HW_2-1<br/>我的個人行程表</a>
@@ -77,6 +77,7 @@
         </details>
       </section>
       <div class="author">
+        <p class="run-times" title="主頁运行时间">RunTime Loading...</p>
         <p>Update: 2019-09-18</p>
         <p>Designed By: </p>
         <p>&emsp;李瑞豪</p>
