@@ -63,10 +63,10 @@ header .welcome-inner:nth-child(2) {
 }
 header .welcome-inner span{
   position: absolute;
-  animation: marquee 6s linear infinite;
+  animation: marquee 8s linear infinite;
 }
 header .welcome-inner:first-child span{
-  animation-delay: 3s;
+  animation-delay: 4s;
   left: 100%;
 }
 @keyframes marquee {
@@ -82,7 +82,7 @@ footer{
   font-size: 12px;
   width: 700px;
   text-align: center;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 main{
   position: relative;
@@ -181,22 +181,25 @@ details ul li{
   font-family: lrh-sign;
   src: url(../fonts/lrh-en.ttf)
 }
-.author{
+.design{
   position: absolute;
-  align-self: center;
+  align-self: flex-end;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: baseline;
   width: 300px;
   box-sizing: border-box;
   z-index: -2; 
+  padding: 20px;
 }
-.author p{
-  margin-left: 50px;
+.design p{
   font-size: 18px;
   font-family: lrh-sign;
 }
-.author p:last-child{
-  font-size: 45px;
+.design .author{
+  font-size: 1.5rem;
+}
+.design  .run-times{
+  font-size: 1.8rem;
+  margin-bottom: 300px;
 }

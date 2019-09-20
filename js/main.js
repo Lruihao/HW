@@ -83,7 +83,7 @@ function createTime() {
   if (String(seconds).length === 1) {
     seconds = "0" + seconds;
   }
-  document.querySelector(".run-times").innerHTML = "RunTime: " + days + "," + hours
+  document.querySelector(".run-times").innerHTML = "Running: " + days + "," + hours
           + ":" + minutes + ":" + seconds + "";
 }
 
