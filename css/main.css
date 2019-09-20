@@ -36,8 +36,8 @@ q{
 }
 address{
   font-size: 12px;
-  position: relative;
-  top: 15%;
+  position: absolute;
+  bottom: 20px;
 }
 header{
   width: 700px;
@@ -191,15 +191,19 @@ details ul li{
   box-sizing: border-box;
   z-index: -2; 
   padding: 20px;
+  background: url(../images/bg.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0 70px;
 }
 .design p{
-  font-size: 18px;
+  font-size: 1.2rem;
   font-family: lrh-sign;
 }
-.design .author{
+.design .name{
   font-size: 1.5rem;
 }
 .design  .run-times{
   font-size: 1.8rem;
-  margin-bottom: 300px;
+  flex-basis: 350px;
 }
