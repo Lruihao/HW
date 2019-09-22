@@ -105,7 +105,7 @@ aside{
   padding: 30px;
   overflow: auto;
   animation: close-aside 2.5s;
-  z-index: 1;
+  /*z-index: 1;*/
 }
 .open-aside{
   transform-origin: left;
@@ -119,7 +119,7 @@ aside{
 }
 @keyframes close-aside{
   from{
-    transform: skewY(5deg) rotateY(135deg);
+    transform: skewY(5deg) rotateY(90deg);
     transform-origin: left;
   }
   to{
@@ -154,7 +154,29 @@ section{
   border-radius: 5px 0 0 5px;
   padding: 30px;
   overflow: auto;
+  animation: close-section 2.5s;
 }
+.open-section{
+  transform-origin: right;
+  transform: skewY(-5deg) rotateY(-135deg);
+  transition: transform 2.5s;
+}
+.close-section{
+  transform-origin: right;
+  transform: skewY(0deg) rotateY(0deg);
+  transition: transform 2.5s;
+}
+@keyframes close-section{
+  from{
+    transform: skewY(-5deg) rotateY(-90deg);
+    transform-origin: right;
+  }
+  to{
+    transform: skewY(0deg) rotateY(0deg);
+    transform-origin: right;
+  }
+}
+
 section a{
   color: #000;
   text-decoration:none;
