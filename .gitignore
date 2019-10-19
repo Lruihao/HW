@@ -3,5 +3,4 @@
 *.min.html
 
 Commit.bat
-/nbproject/*
-/nbproject/*/
+/nbproject/
