@@ -3,4 +3,4 @@
 *.min.html
 
 Commit.bat
-/nbproject/private/
+/nbproject/*
