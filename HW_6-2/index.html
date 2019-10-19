@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>造型商城</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/HW_6-2.css"/>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/HW_6-2.js"></script>
+  </head>
+  <body>
+    <header class="box-showdow">
+      <a href="./">
+        <img src="../images/HW_4-1/logo.jpg" class="logo-img" alt="logo" />
+      </a>
+      <nav>
+        <ul class="menu">
+          <li><a href="./">首頁</a></li>
+          <li>|&emsp;<a href="./">造型商城</a></li>
+          <li>|&emsp;<a href="#" target="_blank">討論區</a></li>
+          <li class="sub-menu">|&emsp;<a>友站鏈接</a>
+            <ul>
+              <li><a href="https://www.baidu.com/" target="_blank">百度</a></li>
+              <li><a href="http://www.qq.com/" target="_blank">騰訊</a></li>
+              <li><a href="http://weibo.com/" target="_blank">微博</a></li>
+              <li><a href="http://www.boc.cn/" target="_blank">中國銀行</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <aside class="box-showdow">
+        <div class="title">
+          <h1>冒險者小屋</h1>
+        </div>
+        <div class="pic-group">
+          <div class="bg">
+            <img src="../images/HW_6-2/img/0000000.gif" alt="背景">
+          </div>
+          <div class="cape">
+            <img src="../images/HW_6-2/img/0000000.gif" alt="披風">
+          </div>
+          <div class="body">
+            <img src="../images/HW_6-2/img/0500000.gif" alt="身體">
+          </div>
+          <div class="trousers">
+            <img src="../images/HW_6-2/img/1210000.gif" alt="褲子">
+          </div>
+          <div class="laps">
+            <img src="../images/HW_6-2/img/1300001.gif" alt="上衣">
+          </div>
+          <div class="eye">
+            <img src="../images/HW_6-2/img/0710001.gif" alt="眼睛">
+          </div>
+          <div class="glass">
+            <img src="../images/HW_6-2/img/0000000.gif" alt="眼鏡">
+          </div>
+          <div class="hair">
+            <img src="../images/HW_6-2/img/0901011.gif" alt="頭髮">
+          </div>
+          <div class="hat">
+            <img src="../images/HW_6-2/img/0000000.gif" alt="帽子">
+          </div>
+          <div class="pet">
+            <img src="../images/HW_6-2/img/0000000.gif" alt="寵物">
+          </div>
+        </div>
+        <div class="btn">
+          <button class="save">保存目前穿著</button>
+          <button class="restore">恢復原樣</button>
+        </div>
+      </aside>
+      <div class="product-list">
+        <div id="tab-hot" class="tab-content box-showdow">
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1100004.png" name="hat" alt="藍色夏威夷帽">
+            <div class="item-detail">
+              <h3>藍色夏威夷帽</h3>
+              <hr/>
+              <span>$1760</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item hot-item">
+            <img class="item-img" src="../images/HW_6-2/icon/1100003.png" name="hat" alt="紅色夏威夷帽">
+            <div class="item-detail">
+              <h3>紅色夏威夷帽</h3>
+              <hr/>
+              <span><del>$1840</del></span>
+              <span class="item-price">$1680</span>
+              <span class="hot-sale">On Sale</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1300000.png" name="laps" alt="白色帥氣襯衫">
+            <div class="item-detail">
+              <h3>白色帥氣襯衫</h3>
+              <hr/>
+              <span>$1999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/0800003.png" name="glass" alt="大框眼鏡">
+            <div class="item-detail">
+              <h3>大框眼鏡</h3>
+              <hr/>
+              <span>$2399</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1200006.png" name="trousers" alt="迷彩褲">
+            <div class="item-detail">
+              <h3>迷彩褲</h3>
+              <hr/>
+              <span>$1599</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/0200003.png" name="cape" alt="天使之翼">
+            <div class="item-detail">
+              <h3>天使之翼</h3>
+              <hr/>
+              <span>$3999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/0100002.png" name="pet" alt="野豬">
+            <div class="item-detail">
+              <h3>野豬</h3>
+              <hr/>
+              <span>$3999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/img/0100001.gif" name="bg" alt="單身背景">
+            <div class="item-detail">
+              <h3>單身背景</h3>
+              <hr/>
+              <span>$1999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-hat" class="tab-content">
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1100004.png" name="hat" alt="藍色夏威夷帽">
+            <div class="item-detail">
+              <h3>藍色夏威夷帽</h3>
+              <hr/>
+              <span>$1760</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item hot-item">
+            <img class="item-img" src="../images/HW_6-2/icon/1100003.png" name="hat" alt="紅色夏威夷帽">
+            <div class="item-detail">
+              <h3>紅色夏威夷帽</h3>
+              <hr/>
+              <span><del>$1840</del></span>
+              <span class="item-price">$1680</span>
+              <span class="hot-sale">On Sale</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1100002.png" name="hat" alt="國王帽子">
+            <div class="item-detail">
+              <h3>國王帽子</h3>
+              <hr/>
+              <span>$2999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1100053.png" name="hat" alt="海盜帽">
+            <div class="item-detail">
+              <h3>海盜帽</h3>
+              <hr/>
+              <span>$1999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1100055.png" name="hat" alt="恐怖的帽子">
+            <div class="item-detail">
+              <h3>恐怖的帽子</h3>
+              <hr/>
+              <span>$2999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1100047.png" name="hat" alt="羊角帽子">
+            <div class="item-detail">
+              <h3>羊角帽子</h3>
+              <hr/>
+              <span>$1999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1100000.png" name="hat" alt="海軍帽子">
+            <div class="item-detail">
+              <h3>海軍帽子</h3>
+              <hr/>
+              <span>$1999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1100001.png" name="hat" alt="三角帽子">
+            <div class="item-detail">
+              <h3>三角帽子</h3>
+              <hr/>
+              <span>$1760</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-glass" class="tab-content">
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/0800001.png" name="glass" alt="中框眼鏡">
+            <div class="item-detail">
+              <h3>中框眼鏡</h3>
+              <hr/>
+              <span>$1999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/0800002.png" name="glass" alt="窄框眼鏡">
+            <div class="item-detail">
+              <h3>窄框眼鏡</h3>
+              <hr/>
+              <span>$2599</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/0800003.png" name="glass" alt="大框眼鏡">
+            <div class="item-detail">
+              <h3>大框眼鏡</h3>
+              <hr/>
+              <span>$2399</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            暫無更多~
+            <div class="item-desc">
+              <h3>暫無更多~</h3>
+              <hr/>
+              <p>
+                正在研發中，暫無更多新品，敬請期待~
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-laps" class="tab-content">
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1300001.png" name="laps" alt="時尚背心">
+            <div class="item-detail">
+              <h3>時尚背心</h3>
+              <hr/>
+              <span>$899</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1300005.png" name="laps" alt="黑橙撞色t恤">
+            <div class="item-detail">
+              <h3>黑橙撞色t恤</h3>
+              <hr/>
+              <span>$1099</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1300006.png" name="laps" alt="灰色t恤">
+            <div class="item-detail">
+              <h3>灰色t恤</h3>
+              <hr/>
+              <span>$999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1300506.png" name="laps" alt="彩色條紋t恤">
+            <div class="item-detail">
+              <h3>彩色條紋t恤</h3>
+              <hr/>
+              <span>$1099</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1300000.png" name="laps" alt="白色帥氣襯衫">
+            <div class="item-detail">
+              <h3>白色帥氣襯衫</h3>
+              <hr/>
+              <span>$1999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1300504.png" name="laps" alt="黃色t恤">
+            <div class="item-detail">
+              <h3>黃色t恤</h3>
+              <hr/>
+              <span>$1999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-trousers" class="tab-content">
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1200006.png" name="trousers" alt="迷彩褲">
+            <div class="item-detail">
+              <h3>迷彩褲</h3>
+              <hr/>
+              <span>$1599</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1200005.png" name="trousers" alt="哈倫褲">
+            <div class="item-detail">
+              <h3>哈倫褲</h3>
+              <hr/>
+              <span>$999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1200003.png" name="trousers" alt="超短褲">
+            <div class="item-detail">
+              <h3>超短褲</h3>
+              <hr/>
+              <span>$599</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1200503.png" name="trousers" alt="超短裙">
+            <div class="item-detail">
+              <h3>超短裙</h3>
+              <hr/>
+              <span>$999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-cape" class="tab-content">
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/0200001.png" name="cape" alt="巫婆斗篷">
+            <div class="item-detail">
+              <h3>巫婆斗篷</h3>
+              <hr/>
+              <span>$2599</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/0200002.png" name="cape" alt="公主披風">
+            <div class="item-detail">
+              <h3>公主披風</h3>
+              <hr/>
+              <span>$2999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/0200003.png" name="cape" alt="天使之翼">
+            <div class="item-detail">
+              <h3>天使之翼</h3>
+              <hr/>
+              <span>$3999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/0200004.png" name="cape" alt="惡魔之翼">
+            <div class="item-detail">
+              <h3>惡魔之翼</h3>
+              <hr/>
+              <span>$3999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-pet" class="tab-content">
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1901009.png" name="pet" alt="小哈">
+            <div class="item-detail">
+              <h3>小哈</h3>
+              <hr/>
+              <span>$3999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1901015.png" name="pet" alt="小虎">
+            <div class="item-detail">
+              <h3>小虎</h3>
+              <hr/>
+              <span>$3999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/0100002.png" name="pet" alt="野豬">
+            <div class="item-detail">
+              <h3>野豬</h3>
+              <hr/>
+              <span>$3999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/icon/1901004.png" name="pet" alt="小兔">
+            <div class="item-detail">
+              <h3>小兔</h3>
+              <hr/>
+              <span>$3999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="tab-bg" class="tab-content">
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/img/0000001.gif" name="bg" alt="鬼腦殼">
+            <div class="item-detail">
+              <h3>鬼腦殼</h3>
+              <hr/>
+              <span>$1999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/img/0000002.gif" name="bg" alt="綠油油">
+            <div class="item-detail">
+              <h3>綠油油</h3>
+              <hr/>
+              <span>$1999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/img/0000003.gif" name="bg" alt="黃閃閃">
+            <div class="item-detail">
+              <h3>黃閃閃</h3>
+              <hr/>
+              <span>$999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+          <div class="item">
+            <img class="item-img" src="../images/HW_6-2/img/0100001.gif" name="bg" alt="單身背景">
+            <div class="item-detail">
+              <h3>單身背景</h3>
+              <hr/>
+              <span>$1999</span>
+              <p class="btn">
+                <button class="try-on">試穿</button>
+                <button class="buy">購買</button>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <ul class="tab-menu">
+            <li><a href="#tab-hot">熱門商品</a></li>
+            <li><a href="#tab-hat">帽子</a></li>
+            <li><a href="#tab-glass">眼鏡</a></li>
+            <li><a href="#tab-laps">上衣</a></li>
+            <li><a href="#tab-trousers">褲子</a></li>
+            <li><a href="#tab-cape">披風</a></li>
+            <li><a href="#tab-pet">寵物</a></li>
+            <li><a href="#tab-bg">背景</a></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

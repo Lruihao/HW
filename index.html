@@ -5,15 +5,16 @@
     <title>個人主頁</title>
     <link rel="stylesheet" type="text/css" href="./css/main.css" >
     <link rel="icon" href="https://10.151.110.165/favicon.ico" >
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
   </head>
   <body>
     <header>
       <div class="welcome-inner">
-        <span>✁歡迎光臨！點擊頭像可翻開底頁！</span>
+        <span>✁歡迎光臨！點擊頭像或作業翻開！</span>
       </div>
       <div class="welcome-inner">
-        <span>✄歡迎光臨！點擊頭像可翻開底頁！</span>
+        <span>✄歡迎光臨！點擊頭像或作業翻開！</span>
       </div>
     </header>
     <main>
@@ -49,11 +50,11 @@
           郵箱：<a href="mailto:hzlh-orm-itap5@mail.foxconn.com" target="_blank">hzlh-orm-itap5@mail.foxconn.com</a>
         </address>
       </aside>
-      <section class="">
+      <section class="close-section">
         <h2>📚作業目錄</h2>
         <hr/>
         <details open="open">
-          <summary><b>作業進度：</b><progress max="10"></progress></summary>
+          <summary><b>作業進度：</b><progress max="10" title = "當前進度："></progress></summary>
           <ul>
             <li>
               <a href="./HW_2-1/index.html" target="_blank">2019/08/08<br/>HW_2-1<br/>我的個人行程表</a>
@@ -68,19 +69,22 @@
               <a href="./HW_4-2/index.html" target="_blank">2019/08/26<br/>HW_4-2<br/>滾動的球</a>
             </li>
             <li>
-              <a href="./HW_5-1/index.html" target="_blank">2019/09/5<br/>HW_5-1<br/>問卷設計</a>
+              <a href="./HW_5-1/index.html" target="_blank">2019/09/05<br/>HW_5-1<br/>問卷設計</a>
+            </li>
+            <li>
+              <a href="./HW_6-1/index.html" target="_blank">2019/09/23<br/>HW_6-1<br/>計算機</a>
+            </li>
+            <li>
+              <a href="./HW_6-2/index.html" target="_blank">2019/10/08<br/>HW_6-2<br/>造型商城</a>
             </li>
             <li>
               <a href="./HW_7-1/index.php" target="_blank">2019/09/04<br/>HW_7-1<br/>九九乘法表</a>
             </li>
             <li>
-              <a href="#" target="_blank">2019/09/XX<br/>HW_6-1<br/>XXXXXXX</a>
+              <a href="./HW_10-1/index.html" target="_blank">2019/10/14<br/>HW_10-1<br/>抽獎機</a>
             </li>
             <li>
-              <a href="#" target="_blank">2019/09/XX<br/>HW_6-2<br/>XXXXXXX</a>
-            </li>
-            <li>
-              <a href="#" target="_blank">2019/09/XX<br/>HW_10-1<br/>XXXXXXX</a>
+              <a href="./HW_10-1/prize_admin.html" target="_blank">2019/10/17<br/>HW_10-1<br/>抽獎機-獎品管理</a>
             </li>
           </ul>
         </details>
@@ -108,6 +112,12 @@
               3. 新增點擊頭像翻頁(JS)，滾動歡迎辭(CSS)。
             </p>
           </article>
+          <article>
+            <h3>2019.09.25</h3>
+            <p>
+              修改翻頁邏輯，實現兩頁都可翻開。
+            </p>
+          </article>
         </details>
       </section>
       <div class="design">
@@ -117,6 +127,16 @@
           <span>Author: </span>
           <span class="name">李瑞豪</span>
         </p>
+      </div>
+      <div class="guestbook">
+        <h2>留言板</h2>
+        <form id="cm-form">
+          <input type="text" name="cm-nick" placeholder="昵称" class="cm-nick">
+          <input type="text" name="cm-email" placeholder="郵箱" class="cm-email">
+          <textarea placeholder="(つ◕౪◕)つ━☆ﾟ.*･｡ﾟ" class="cm-editer"></textarea>
+          <input type="button" value="回復" class="cm-submit">
+        </form>
+        <div class="cm-display"></div>
       </div>
     </main>
     <footer>

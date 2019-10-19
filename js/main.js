@@ -2,7 +2,7 @@
  * @Name: main.js
  * @Description: 個人主頁
  * @Author: 李瑞豪
- * @Update: 2019-09-18 16:02
+ * @Update: 2019-09-25 14:42
  */
 
 window.onload = function () {
@@ -18,20 +18,87 @@ window.onload = function () {
   crashCheat();
   //建立全局雙擊事件監聽，點擊頭像翻開aside
   document.querySelector('aside > .avatar').addEventListener("click", function () {
-    toggle();
+    asideToggle();
   });
+  document.querySelector('section > h2').addEventListener("click", function () {
+    sectionToggle();
+  });
+
+  //此處使用jQuery進行異步提交
+//  $("#cm-form").submit(function () {
+//    $.ajax({
+//      async: false,
+//      type: "POST",
+//      url: "index.php",
+//      data: $("#cm-form").serialize(),
+//      dataType: "text",
+//      success: function () {
+//
+//      },
+//      error: function () {
+//
+//      }
+//    });
+//  });
 };
 
 /**
  * 通過控制aside的類來實現aside翻頁效果
  */
-function toggle() {
+function asideToggle() {
   var aside = document.querySelector("aside");
   var section = document.querySelector("section");
+  var guestbook = document.querySelector(".guestbook");
   if (aside.className === "close-aside") {
+    if (section.className === "open-section") {
+      guestbook.style.zIndex = -1;
+      section.className = "close-section";
+      setTimeout(function () {
+        section.style.zIndex = 0;
+      }, 1000);
+    }
+    aside.style.zIndex = 1;
     aside.className = "open-aside";
   } else {
     aside.className = "close-aside";
+    setTimeout(function () {
+      aside.style.zIndex = 0;
+    }, 1000);
+  }
+}
+/**
+ * 通過控制section的類來實現section翻頁效果
+ */
+function sectionToggle() {
+  var aside = document.querySelector("aside");
+  var section = document.querySelector("section");
+  var guestbook = document.querySelector(".guestbook");
+  if (section.className === "close-section") {
+    if (aside.className === "open-aside") {
+      aside.className = "close-aside";
+      setTimeout(function () {
+        aside.style.zIndex = 0;
+      }, 500);
+      setTimeout(function () {
+        section.style.zIndex = 1;
+        section.className = "open-section";
+      }, 500);
+      setTimeout(function () {
+        guestbook.style.zIndex = 1;
+      }, 1500);
+    } else {
+      section.style.zIndex = 1;
+      section.className = "open-section";
+      setTimeout(function () {
+        guestbook.style.zIndex = 1;
+      }, 1000);
+    }
+  } else {
+    guestbook.style.zIndex = -1;
+    section.className = "close-section";
+    setTimeout(function () {
+      section.style.zIndex = 0;
+    }, 1000);
   }
 }
 
@@ -61,19 +128,25 @@ function crashCheat() {
 function progress() {
   var progress = document.querySelector("details progress");
   var value = document.querySelectorAll("details > ul > li");
-  progress.setAttribute("value", value.length);
-  progress.title = "當前進度：" + progress.value + "/10";
+  //延遲2s放慢效果
+  setTimeout(function () {
+    progress.setAttribute("value", value.length);
+    progress.title += progress.value + "/10";
+  }, 2000);
 }
 
+/**
+ * 創建建站時間
+ */
 function createTime() {
   var now = new Date();
   var run = new Date("08/01/2019 11:30:00");
   //總的秒數
   var runTime = (now - run) / 1000,
-  days = Math.floor(runTime / 60 / 60 / 24),
-  hours = Math.floor(runTime / 60 / 60 - (24 * days)),
-  minutes = Math.floor(runTime / 60 - (24 * 60 * days) - (60 * hours)),
-  seconds = Math.floor(runTime - (24 * 60 * 60 * days) - (60 * 60 * hours) - (60 * minutes));
+          days = Math.floor(runTime / 60 / 60 / 24),
+          hours = Math.floor(runTime / 60 / 60 - (24 * days)),
+          minutes = Math.floor(runTime / 60 - (24 * 60 * days) - (60 * hours)),
+          seconds = Math.floor(runTime - (24 * 60 * 60 * days) - (60 * 60 * hours) - (60 * minutes));
   //前置零
   if (String(hours).length === 1) {
     hours = "0" + hours;
@@ -87,4 +160,5 @@ function createTime() {
   document.querySelector(".run-times").innerHTML = "Running: " + days + "," + hours
           + ":" + minutes + ":" + seconds + "";
 }
+
 

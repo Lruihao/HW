@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>抽獎機 - 獎品管理</title>
+    <link rel="stylesheet" type="text/css" href="../css/prize_admin.css">
+    <link rel="stylesheet" type="text/css" href="../jquery-ui-1.12.1/jquery-ui.min.css">
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/prize_admin.js"></script>
+  </head>
+  <body>
+    <main>
+      <div class="operate">
+        <button class="prize-count">數目: <span>0</span></button>
+        <button class="sel-all">獎品列表</button>
+        <button class="sel-part">尚未领取</button>
+        <button class="add-name">新增獎品</button>
+        <button class="reset-time">重置獎品</button>
+      </div>
+      <table border="1">
+        <thead>
+          <tr>
+            <th>編號</th>
+            <th>名稱</th>
+            <th>建立时间</th>
+            <th>领取时间</th>
+            <th>修改</th>
+            <th>删除</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <div class="add-data">
+        <form>
+          <label for="add-prize"><b>獎品名稱</b></label>
+          <input type="text" name="add-prize" id="add-prize"/>
+        </form>
+      </div>
+      <div class="revise-data">
+        <form>
+          <label for="revise-prize"><b>獎品名稱</b></label>
+          <input type="text" name="revise-prize" id="revise-prize"/>
+        </form>
+      </div>
+      <div class="del-data">
+        <p><span class="ui-icon ui-icon-alert"></span>請再三確認，刪除後不可復原！</p>
+      </div>
+      <div class="reset-data">
+        <p><span class="ui-icon ui-icon-alert"></span>將重置所有已領取獎品！！！</p>
+      </div>
+    </main>
+  </body>
+</html>

@@ -125,7 +125,7 @@ function questionAdd() {
 /**
  * 簡單防止XSS注入，將用戶輸入先轉化為實體字符
  * @param {String} str 需要轉化的字符串
- * @return {div.innerHTML} 轉化后的字符串
+ * @return {String} 轉化后的字符串
  */
 function stringToEntity(str) {
   var div = document.createElement('div');

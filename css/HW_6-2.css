@@ -1,0 +1,336 @@
+/**
+ * @Name: HW_6-2.css
+ * @Description: 造型商城
+ * @Author: 李瑞豪
+ * @Update: 2019-09-27 15:18
+ */
+
+/* common style */
+.box-showdow{
+  border: 2px solid #777;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px #888;
+}
+li{
+  list-style: none;
+}
+a{
+  color: #000;
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #222;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: #555;
+}
+
+/* header style */
+/**
+ * header: #logo,nav
+ */
+header{
+  width: 1000px;
+  height: 100px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.logo-img{
+  width: 245px;
+  height: 100%;
+  border-radius: 5px 0 0 5px;
+  border-right: 2px solid #777;
+}
+nav{
+  position: relative;
+  top: 54%;
+  font-size: 18px;
+}
+.menu{
+  height: 30px;
+  line-height: 30px;
+  width: 100%;
+}
+.menu > li{
+  float: left;
+  margin-left: 20px;
+}
+.menu li > a:hover, .menu li > a:active{
+  color: #f65219;
+}
+.sub-menu > ul{
+  position: relative;
+  background: #dae8ca;
+  padding-left: 0;
+  width: auto;
+  height: 120px;
+  border: 1px solid #000;
+  border-radius: 0 0 5px 5px;
+  border-top: none;
+  display: none;
+  z-index: 99;
+}
+.sub-menu:hover > ul{
+  display: block;
+}
+.sub-menu li:not(:last-child){
+  border-bottom: 1px solid #000;
+}
+.sub-menu li > a{
+  margin-left: 20px;
+}
+.sub-menu a:hover, a:active{
+  color: #FF0A00;
+}
+
+/* main style */
+/**
+ * main: aside,#product-list
+ * #product-list: .tab-content,.tab-menu
+ */
+main{
+  width: 1000px;
+  height: 400px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+aside{
+  width: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+aside .title{
+  text-align: center;
+  width: 100%;
+  background-color: #FFFFFF;
+  background-image: linear-gradient(133deg, #FFFFFF 5%, #000000 100%);
+  margin-bottom: 30px;
+  border-radius: 3px 3px 0 0;
+  color: #fff;
+}
+.pic-group{
+  width: 110px;
+  height: 160px;
+  position: relative;
+}
+.bg,.cape,.body,.trousers,.laps,.eye,.glass,.hair,.hat,.pet{
+  width: 110px;
+  height: 160px;
+  position: absolute;
+  border: 2px solid #999;
+}
+aside .btn{
+  padding-left: 25px;
+  margin-top: 30px;
+}
+aside .btn button{
+  margin-bottom: 15px;
+  width: 120px;
+}
+.product-list{
+  width: calc(100% - 200px);
+  position:relative;
+}
+.tab-menu {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+.tab-menu li{
+  display:inline-block;
+  margin: 0;
+  padding: 0;
+}
+.tab-menu li a{
+  display: block;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  width: 80px;
+  height: 30px;
+  margin-right: 10px;
+  border: 2px solid #777;
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  background: #54686e;
+  color: #fff;
+}
+.tab-menu li a:hover{
+  background: #adcca3;
+  color: #000;
+}
+.tab-content{
+  position: absolute;
+  top: 30px;
+  box-sizing: border-box;
+  width: 100%;
+  height: calc(100% - 30px);
+  overflow: auto;
+  background: #d2e6c1;
+  border: 2px solid #777;
+  border-radius: 0 0 5px 5px;
+  display: none;
+}
+#tab-hot,#tab-hat:target,#tab-glass:target,#tab-laps:target
+,#tab-trousers:target,#tab-cape:target,#tab-pet:target,#tab-bg:target{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+div .tab-menu li:first-child a{
+  background: #d2e6c1;
+  color: #000;
+}
+/* 目标被呼叫目标变色 */
+#tab-hot:target ~ div li:nth-child(1) a,
+#tab-hat:target ~ div li:nth-child(2) a,
+#tab-glass:target ~ div li:nth-child(3) a,
+#tab-laps:target ~ div li:nth-child(4) a,
+#tab-trousers:target ~ div li:nth-child(5) a,
+#tab-cape:target ~ div li:nth-child(6) a,
+#tab-pet:target ~ div li:nth-child(7) a,
+#tab-bg:target ~ div li:nth-child(8) a{
+  background: #d2e6c1;
+  color: #000;
+}
+/* 目标被呼叫且tab-hot不被靠近是tab-hot变色 */
+#tab-hat:target ~ div li:first-child:not(:hover) a,
+#tab-glass:target ~ div li:first-child:not(:hover) a,
+#tab-laps:target ~ div li:first-child:not(:hover) a,
+#tab-trousers:target ~ div li:first-child:not(:hover) a,
+#tab-cape:target ~ div li:first-child:not(:hover) a,
+#tab-pet:target ~ div li:first-child:not(:hover) a,
+#tab-bg:target ~ div li:first-child:not(:hover) a{
+  background: #54686e;
+  color: #fff;
+}
+/* 目标被呼叫且tab-hot被靠近是tab-hot变色 */
+#tab-hat:target ~ div li:first-child:hover a,
+#tab-glass:target ~ div li:first-child:hover a,
+#tab-laps:target ~ div li:first-child:hover a,
+#tab-trousers:target ~ div li:first-child:hover a,
+#tab-cape:target ~ div li:first-child:hover a,
+#tab-pet:target ~ div li:first-child:hover a,
+#tab-bg:target ~ div li:first-child:hover a{
+  background: #adcca3;
+  color: #000;
+}
+
+.item{
+  position: relative;
+  /*margin: auto;*/
+  margin: 25px auto 25px;
+  width: 45%;
+  height: 35%;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  box-shadow: 8px 8px 5px #888;
+  background: #dae8ca;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.item:hover{
+  transform: scale(1.01);
+  transition: all 0.15s;
+  z-index: 1;
+}
+.item:hover .item-desc{
+  display: block;
+}
+.item-desc{
+  position: absolute;
+  bottom: 90%;
+  width: 100%;
+  height: 70%;
+  background: #000;
+  opacity: 0.7;
+  color: #fff;
+  border: none;
+  border-radius: 10px 10px 10px 0;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  display: none;
+}
+.item-desc > h3,.item-desc > p{
+  margin: 0;
+}
+.item-img{
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+.item-img:hover{
+  transform: scale(1.6);
+  transition: all 0.5s;
+}
+.item-price{
+  color: yellow;
+}
+.item-detail{
+  width: 50%;
+  height: 90%;
+}
+.item-detail > h3{
+  text-align: left;
+  margin: 5px 0;
+}
+.hot-sale{
+  position: absolute;
+  top: 15px;
+  right: 30px;
+  font-weight: bold;
+  color: greenyellow;
+}
+.hot-item{
+  background: #ad2021;
+  color: #fff;
+}
+.item-detail .btn{
+  text-align: right;
+}
+.btn button{
+  border-radius: 5px;
+  border: 1px solid #eee;
+  color: #fff;
+  padding: 5px 5px 5px 25px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+}
+.btn button:hover{
+  border: 1px solid #777;
+  background-color: #fff;
+  color: #000;
+}
+
+.try-on{
+  background: url(../images/HW_6-2/button-icon/clothes.png) no-repeat #e9540b;
+  background-position: 5px center;
+}
+.buy{
+  background: url(../images/HW_6-2/button-icon/buy.png) no-repeat #e9540b;
+  background-position: 5px center;
+}
+.save{
+  background: url(../images/HW_6-2/button-icon/save.png) no-repeat #e9540b;
+  background-position: 5px center;
+}
+.restore{
+  background: url(../images/HW_6-2/button-icon/restore.png) no-repeat #e9540b;
+  background-position: 5px center;
+}
