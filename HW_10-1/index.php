@@ -36,12 +36,12 @@ if ($num_rows !== 0) {
   $prize = mysqli_fetch_object(mysqli_query($db_conn, $sel_sql));
   if ($prize === null) {
     //謝謝惠顧
-    $prize = new prize();
+    $prize = new Prize();
   }
   echo json_encode($prize);
 } else {
   //數據庫無可領取獎品
-  $prize = new prize();
+  $prize = new Prize();
   $prize->rp_name = "獎品告罄";
   echo json_encode($prize);
 }

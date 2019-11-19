@@ -15,7 +15,6 @@ html,body {
 main{
   margin: auto;
   width: 1000px;
-  height: 650px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -24,10 +23,13 @@ main{
 }
 .prize-box{
   width: 300px;
-  height: 300px;
+  height: 290px;
   /*border: 1px solid #f00;*/
+  z-index: 1;
 }
 .prize-img{
+  width: 40%;
+  height: 30%;
   position: relative;
 }
 .welcome,.prize{
@@ -50,6 +52,7 @@ main{
 }
 footer{
   position: absolute;
+  font-size: 1rem;
   bottom: 0;
   margin: 0 auto;
 }

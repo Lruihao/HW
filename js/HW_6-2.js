@@ -7,12 +7,12 @@
 
 $(function () {
   //首頁301重定向
-  var path = window.location.href;
+  let path = window.location.href;
   if (path.indexOf("#") !== -1) {
     window.location.replace(window.location.protocol + window.location.pathname);
   }
 
-  var localStorage = window.localStorage;
+  let localStorage = window.localStorage;
   // 先判斷localStorage里有沒有數據
   if (localStorage.length !== 0) {
     loadingImg();
@@ -38,18 +38,18 @@ $(function () {
    * 試穿
    */
   $(".try-on").click(function () {
-    var img = $(".item-img").eq($(this).index(".try-on")); //找到图片元素
-    var imgUrl = img.attr("src"); //獲取圖片鏈接
-    var fileName = imgUrl.slice(imgUrl.lastIndexOf("/"), -4); //截取圖片文件名
-    var src = `../images/HW_6-2/img/${fileName}.gif`; //template string平湊新的圖片鏈接
-    var type = img.attr("name"); //獲取圖片name屬性
+    let img = $(".item-img").eq($(this).index(".try-on")); //找到图片元素
+    let imgUrl = img.attr("src"); //獲取圖片鏈接
+    let fileName = imgUrl.slice(imgUrl.lastIndexOf("/"), -4); //截取圖片文件名
+    let src = `../images/HW_6-2/img/${fileName}.gif`; //template string拼湊新的圖片鏈接
+    let type = img.attr("name"); //獲取圖片name屬性
     $(`.${type}>img`).attr("src", src); //修改預覽圖片路徑
   });
   $(".item-img").click(function () {
-    var imgUrl = $(this).attr("src"); //獲取圖片鏈接
-    var fileName = imgUrl.slice(imgUrl.lastIndexOf("/"), -4); //截取圖片文件名
-    var src = `../images/HW_6-2/img/${fileName}.gif`; //template string平湊新的圖片鏈接
-    var type = $(this).attr("name"); //獲取圖片name屬性
+    let imgUrl = $(this).attr("src"); //獲取圖片鏈接
+    let fileName = imgUrl.slice(imgUrl.lastIndexOf("/"), -4); //截取圖片文件名
+    let src = `../images/HW_6-2/img/${fileName}.gif`; //template string拼湊新的圖片鏈接
+    let type = $(this).attr("name"); //獲取圖片name屬性
     $(`.${type}>img`).attr("src", src); //修改預覽圖片路徑
   });
 
@@ -58,7 +58,7 @@ $(function () {
    */
   $(".save").click(function () {
     if (typeof localStorage === 'undefined') {
-      alert("浏览器不支持localStorage，推荐使用Chrome！");
+      console("浏览器不支持localStorage，推荐使用Chrome！");
     } else {
       localStorage.bgModel = $(".bg>img").attr("src");
       localStorage.capeModel = $(".cape>img").attr("src");

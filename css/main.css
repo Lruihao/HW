@@ -2,12 +2,12 @@
  * @Name: main.css
  * @Description: 個人主頁
  * @Author: 李瑞豪
- * @Update: 2019-09-25 14:30
+ * @Update: 2019-10-21 15:30
  */
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: #333;
@@ -48,7 +48,7 @@ header{
 }
 header .welcome-inner{
   height: 30px;
-  width: 200px;
+  width: 350px;
   line-height: 30px;
   font-size: 1em;
   white-space: nowrap;
@@ -63,7 +63,7 @@ header .welcome-inner:nth-child(2) {
 }
 header .welcome-inner span{
   position: absolute;
-  animation: marquee 8s linear infinite;
+  animation: marquee 12s linear infinite;
 }
 header .welcome-inner:first-child span{
   animation-delay: 4s;
@@ -74,7 +74,7 @@ header .welcome-inner:first-child span{
     left: 100%;
   }  
   to {
-    left: -100%;
+    left: -200%;
   }
 }
 
@@ -235,23 +235,79 @@ details ul li{
   right: 300px;
   box-sizing: border-box;
   z-index: -1; 
-  padding: 20px;
+  background: #fff;
+  height: 770px;
+  overflow: auto;
+  padding-bottom: 20px;
 }
 .guestbook h2{
   text-align: center;
 }
+.cm-head{
+  top: 0px;
+  position: sticky;
+  background: #fff;
+  margin: 0 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+#cm-form{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
 .cm-nick,.cm-email{
-  width: 174px;
+  width: 160px;
   height: 20px;
+  padding-left: 2px;
   border-radius: 5px;
 }
-.cm-editer{
+.cm-content{
   width: 354px;
   height: 80px;
   border-radius: 5px;
+  resize: none;
 }
 .cm-submit{
   border-radius: 5px;
-  float: right;
   width: 60px;
+}
+.cm-info{
+  font-weight: bold;
+}
+.cm-display{
+  border-radius: 10px;
+  margin: 20px;
+}
+.cm-card{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 1px dotted #ccc;
+  padding: 10px 5px;
+  justify-content: space-between;
+}
+.cm-card>img{
+  border-radius: 50%;
+  width: 44px;
+  border-bottom: 1px solid #ccc;
+}
+.cm-card>img:hover{
+  transform: rotate(360deg) scale(1.1);
+  transition: all 1s;
+}
+.cm-card>span{
+  display: block;
+  width: calc(100% - 50px);
+  height: 44px;
+  color: #1abc9c;
+  font-weight: bold;
+}
+.cm-card>p{
+  max-width: calc(100% - 60px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  margin-left: 50px;
 }

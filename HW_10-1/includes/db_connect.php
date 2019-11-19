@@ -3,11 +3,11 @@
 /**
  * 連接DB
  */
-$host = "127.0.0.1";
-$username = "lruihao";
-$password = "123456";
-$database = "lruihao";
-$db_conn = mysqli_connect($host, $username, $password, $database, 3307);
+$host = "10.151.110.164";
+$username = "F1684914";
+$password = "ilovefoxconn";
+$database = "f1684914";
+$db_conn = mysqli_connect($host, $username, $password, $database);
 if (mysqli_connect_errno($db_conn)) {
   die("Connection failed: " . mysqli_connect_error());
 }

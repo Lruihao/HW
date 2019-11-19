@@ -4,41 +4,41 @@
  * @Author: 李瑞豪
  * @Update: 2019-09-26 11:45
  */
-
 //全局變量用來保存輸入框的值
-var inputValue = "0";
+let inputValue = "0";
 
 $(document).ready(function () {
-//給所有button建立監聽器(除了=, c, d)
-  $("button").on('click', function (event) {
-    //$(this).blur(); //取消button焦點，防止enter觸發click事件！(治標不治本-_-！)
-    var value = $(this).text();
-    if (!checkOut(value)) {
-      return;
-    }
-    if (value !== "=" && value !== "c" && value !== "d") {
+  //加載歷史記錄
+  if (localStorage.length !== 0) {
+    $(".history1").html(localStorage.calcuHist1);
+    $(".history2").html(localStorage.calcuHist2);
+  }
+  //給所有button建立監聽器
+  $("button").on('click', function () {
+    let value = $(this).text();
+    if (value !== "=" && value !== "AC" && value !== "←" && checkOut(value)) {
       inputValue += value;
       $(".input-calc").val(inputValue); // 顯示輸入的值
     }
   });
-//給"="按鈕建立監聽器
+  //給"="按鈕建立監聽器
   $(".calculate").on('click', function () {
     calculate();
   });
-//給"c"按鈕建立監聽器
+  //給"AC"按鈕建立監聽器
   $(".clear").on('click', function () {
     clear();
   });
-//給"d"按鈕建立監聽器
+  //給"←"按鈕建立監聽器
   $(".del-char").on('click', function () {
     delChar();
   });
-//鍵盤事件監聽器
-  $(document).on('keypress', function (event) {
+  //鍵盤事件監聽器
+  $(document).on('keypress', function () {
     //取消keypress預設動作，防止enter對獲得焦點的button觸發click事件！
     event.preventDefault();
-    var keyValue = event.key; // 獲取鍵值
-    var reg = /[-/*+.0-9]/;
+    let keyValue = event.key; // 獲取鍵值
+    let reg = /[-/*+.0-9]/;
     //test()用於檢測用戶輸入的keyValue是否符合正則表達式reg的內容
     if (reg.test(keyValue)) {
       if (checkOut(keyValue)) {
@@ -51,7 +51,7 @@ $(document).ready(function () {
       calculate();
     }
   });
-  $(document).on('keyup', function (event) {
+  $(document).on('keyup', function () {
     if (event.keyCode === 8) {
       delChar(); //退格鍵刪除,keyup在輸入事件keypress後面觸發
     }
@@ -85,14 +85,15 @@ function delChar() {
 
 /**
  * 檢查用戶輸入
- * @param {Object} value 用戶輸入值
+ * @param {String} value 用戶輸入值
  */
 function checkOut(value) {
-  var fisrtValue = inputValue.slice(0, 1);
-  var lastValue = inputValue.slice(-1);
-  var sear = "/*-+.";
+  let fisrtValue = inputValue.slice(0, 1);
+  let lastValue = inputValue.slice(-1);
+  let sear = "/*-+.";
+  let sear1 = "/*-+";
   //限制輸入長度
-  if (inputValue.length >= 23) {
+  if (inputValue.length >= 21) {
     $(".tip").html("&emsp;輸入內容超過最大長度！&emsp;");
     setTimeout(function () {
       $(".tip").html("");
@@ -108,12 +109,24 @@ function checkOut(value) {
   //用戶輸入運算符且和輸入框最後一個字符相同
   if (sear.indexOf(value) > -1 && sear.indexOf(lastValue) === sear.indexOf(value)) {
     return false;
-  } else if (sear.indexOf(value) > -1 && sear.indexOf(lastValue) > -1
-          && sear.indexOf(lastValue) !== sear.indexOf(value)) {    //用戶輸入和輸入框最後一個字符都是運算符但不相同,替換運算符
+  } else if (sear1.indexOf(value) > -1 && sear.indexOf(lastValue) > -1
+          && sear1.indexOf(lastValue) !== sear1.indexOf(value)) {    //用戶輸入和輸入框最後一個字符都是運算符但不相同,替換運算符
     inputValue = inputValue.slice(0, -1);
     $(".input-calc").val(inputValue);
     return true;
   } else {
+    if (value === ".") { //解決多小數點的輸入，eg:0.0.0.1
+      let otherIndex = -1;
+      let dotIndex = inputValue.lastIndexOf(".");
+      let opeStr = "+-*/";
+      for (let i = 0; i < 4; i++) {
+        let lastIndex = inputValue.lastIndexOf(opeStr[i]);
+        otherIndex < lastIndex ? otherIndex = lastIndex : "";
+      }
+      if (dotIndex > otherIndex) {
+        return false;
+      }
+    }
     return true;
   }
 }
@@ -122,11 +135,55 @@ function checkOut(value) {
  * 計算并顯示結果
  */
 function calculate() {
+  let calculateStr = "";
+  let firstIndex = 99;
+  let opeStr = "+-*/";
+  if (inputValue[0] === "-") {
+    calculateStr = "-";
+    inputValue = inputValue.slice(1);
+  }
+  while (1) {
+    for (let i = 0; i < 4; i++) {
+      let index = inputValue.indexOf(opeStr[i]);
+      (firstIndex > index && index > 0) ? firstIndex = index : "";
+    }
+    if (firstIndex === 99) {
+      if (inputValue.indexOf(".") === -1 && inputValue !== "") {
+        calculateStr += parseInt(inputValue, 10);
+      } else if (inputValue !== "") {
+        calculateStr += inputValue;
+      }
+      break;
+    }
+    //字串分割，把每個整數變成10進制數
+    let num = inputValue.slice(0, firstIndex);
+    if (num.indexOf(".") === -1) {
+      calculateStr += parseInt(num, 10);
+    } else {
+      calculateStr += num;
+    }
+    inputValue = inputValue.slice(firstIndex);
+    calculateStr += inputValue.slice(0, 1);
+    inputValue = inputValue.slice(1);
+    firstIndex = 99;
+  }
   try {
-    var result = eval(inputValue); // 計算字符串中的內容
+    inputValue = calculateStr;
+    let result = eval(calculateStr); // 計算字符串中的內容
     result = eval(result.toFixed(14)); //精確一下
     $(".input-calc").val(result); // 顯示計算的結果
     inputValue = result + "";
+    $(".history1").html(`${$(".history2").html()}`);
+    $(".history2").html(`${calculateStr}=${result}`);
+    if (typeof localStorage === 'undefined') {
+      $(".tip").html("浏览器不支持localStorage，推荐使用Chrome！");
+      setTimeout(function () {
+        $(".tip").html("");
+      }, 3000);
+    } else {
+      localStorage.calcuHist1 = $(".history1").html();
+      localStorage.calcuHist2 = $(".history2").html();
+    }
   } catch (e) {
     $(".tip").html("&emsp;請輸入正確的表達式！&emsp;");
     setTimeout(function () {
@@ -134,7 +191,3 @@ function calculate() {
     }, 3000);
   }
 }
-
-
-
-
